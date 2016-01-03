@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		ECF403311C38955A00B6A52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF403301C38955A00B6A52A /* AppDelegate.swift */; };
-		ECF403331C38955A00B6A52A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF403321C38955A00B6A52A /* ViewController.swift */; };
 		ECF403361C38955A00B6A52A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF403341C38955A00B6A52A /* Main.storyboard */; };
 		ECF403381C38955A00B6A52A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF403371C38955A00B6A52A /* Assets.xcassets */; };
 		ECF4033B1C38955A00B6A52A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF403391C38955A00B6A52A /* LaunchScreen.storyboard */; };
+		ECF403441C38B96400B6A52A /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF403431C38B96400B6A52A /* CalendarCollectionViewController.swift */; };
+		ECF403461C38BCB300B6A52A /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF403451C38BCB300B6A52A /* DateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ECF4032D1C38955A00B6A52A /* My Habit Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Habit Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF403301C38955A00B6A52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECF403321C38955A00B6A52A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ECF403351C38955A00B6A52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECF403371C38955A00B6A52A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF4033A1C38955A00B6A52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF4033C1C38955A00B6A52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF403431C38B96400B6A52A /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
+		ECF403451C38BCB300B6A52A /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				ECF403301C38955A00B6A52A /* AppDelegate.swift */,
-				ECF403321C38955A00B6A52A /* ViewController.swift */,
+				ECF403431C38B96400B6A52A /* CalendarCollectionViewController.swift */,
+				ECF403451C38BCB300B6A52A /* DateCollectionViewCell.swift */,
 				ECF403341C38955A00B6A52A /* Main.storyboard */,
 				ECF403371C38955A00B6A52A /* Assets.xcassets */,
 				ECF403391C38955A00B6A52A /* LaunchScreen.storyboard */,
@@ -136,7 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF403331C38955A00B6A52A /* ViewController.swift in Sources */,
+				ECF403441C38B96400B6A52A /* CalendarCollectionViewController.swift in Sources */,
+				ECF403461C38BCB300B6A52A /* DateCollectionViewCell.swift in Sources */,
 				ECF403311C38955A00B6A52A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +256,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "My Habit Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.proximityviz.My-Habit-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -264,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "My Habit Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.proximityviz.My-Habit-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +295,7 @@
 				ECF403411C38955A00B6A52A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
