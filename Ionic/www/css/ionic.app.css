@@ -9727,3 +9727,22 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.calendar-view .calendar {
+  width: 100%; }
+  .calendar-view .calendar .weekday-labels,
+  .calendar-view .calendar .date {
+    display: inline-block;
+    width: calc(100% / 7);
+    position: relative;
+    border: 1px dashed #000; }
+  .calendar-view .calendar .weekday-labels {
+    text-align: center; }
+  .calendar-view .calendar .date {
+    height: 100px; }
+    .calendar-view .calendar .date .date-number {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      vertical-align: top;
+      text-align: right; }

@@ -1,7 +1,19 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
-  "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.3"
+  "name": "Shawn's Habit Tracker",
+  "license": "MIT",
+  "homepage": "https://github.com/ProximityViz/my-habit-tracker",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.11.0"
   }
 }

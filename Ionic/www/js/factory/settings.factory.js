@@ -4,7 +4,8 @@ angular.module('app')
   .factory('SettingsFactory', function () {
     console.log('SettingsFactory');
 
-    var weekBegins = "Monday";
+    var weekBegins = 1; // 1 = monday
+    // as a smart default, use locale (maybe moment().weekday())
 
     function getWeekBegins() {
       return weekBegins;

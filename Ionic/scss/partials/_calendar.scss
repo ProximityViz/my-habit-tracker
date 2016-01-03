@@ -1,0 +1,25 @@
+.calendar-view {
+	.calendar {
+		width: 100%;
+    .weekday-labels,
+		.date {
+      display: inline-block;
+			width: calc(100% / 7);
+      position: relative;
+      border: 1px dashed #000;
+    }
+    .weekday-labels {
+      text-align: center;
+    }
+    .date {
+      height: 100px;
+      .date-number {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        vertical-align: top;
+        text-align: right;
+      }
+		}
+	}
+} 
