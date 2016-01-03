@@ -7,6 +7,9 @@
 			width: calc(100% / 7);
       position: relative;
       border: 1px dashed #000;
+      &.empty-date {
+        border: none;
+      }
     }
     .weekday-labels {
       text-align: center;
@@ -19,6 +22,9 @@
         right: 0px;
         vertical-align: top;
         text-align: right;
+      }
+      .habit-name {
+        font-weight: bold;
       }
 		}
 	}

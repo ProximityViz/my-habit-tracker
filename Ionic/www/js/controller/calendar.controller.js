@@ -2,8 +2,6 @@ angular.module('app.controllers')
 .controller('CalendarCtrl', ['TrackerFactory', function(TrackerFactory) {
 	console.log('CalendarCtrl');
 
-	// console.log(SettingsFactory.getWeekBegins());
-
 	var month = moment();
 	this.days = TrackerFactory.createCalendarGrid(month);
 	this.monthFormatted = month.format("MMMM YYYY");

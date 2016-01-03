@@ -1,12 +1,41 @@
 'use strict';
 
 angular.module('app')
-  .factory('TrackerFactory', ['SettingsFactory', function (SettingsFactory) {
+  .factory('TrackerFactory', ['SettingsFactory', '$filter', 
+                     function (SettingsFactory,   $filter) {
     console.log('TrackerFactory');
 
-    var npsPack = [];
+    var habit0 = {
+      name: "Musicloon",
+      color: "#262262",
+      abbreviation: "ML",
+      dates: [
+        "2016-01-17",
+        "2016-01-20"
+      ]
+    };
 
-    var packs = [];
+    var habit1 = {
+      name: "Soundscapes",
+      abbreviation: "SS",
+      color: "#50A833",
+      dates: [
+        "2016-01-18",
+        "2016-01-20"
+      ]
+    };
+
+    var habitData = [habit0, habit1];
+    var numberOfHabits = habitData.length; // needed when adding a new habit
+
+    function searchHabitForDate(habit, date) {
+      var found = $filter('filter')(habit.dates, date, true);
+      if (found.length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 
     function getWeekdayList() {
       var firstColumn = SettingsFactory.getWeekBegins();
@@ -38,13 +67,27 @@ angular.module('app')
       // create cells for days
       var day = 1;
       while (day <= daysInMonth) {
-        // add date in here
-        grid.push({cell: cellNumber, number: day});
+        var formattedDate = month.format("YYYY-MM");
+        if (day < 10) {
+          formattedDate = formattedDate + "-0" + day;
+        } else {
+          formattedDate = formattedDate + "-" + day;
+        }
+        var dayData = {cell: cellNumber, number: day};
+        // search habitData for this day
+        var dayHabits = [];
+        for (var habit in habitData) {
+          if (searchHabitForDate(habitData[habit], formattedDate)) {
+            dayHabits.push({abbreviation: habitData[habit].abbreviation, color: habitData[habit].color})
+          }
+        }
+        dayData.habitData = dayHabits;
+        grid.push(dayData);
         day++;
         cellNumber++;
       }
-      // TODO: possibly add blank cells at the end, to round out the last week
 
+      console.log(grid);
       return grid;
     }
 

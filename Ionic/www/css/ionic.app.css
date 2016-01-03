@@ -9736,6 +9736,9 @@ a.button {
     width: calc(100% / 7);
     position: relative;
     border: 1px dashed #000; }
+    .calendar-view .calendar .weekday-labels.empty-date,
+    .calendar-view .calendar .date.empty-date {
+      border: none; }
   .calendar-view .calendar .weekday-labels {
     text-align: center; }
   .calendar-view .calendar .date {
@@ -9746,3 +9749,5 @@ a.button {
       right: 0px;
       vertical-align: top;
       text-align: right; }
+    .calendar-view .calendar .date .habit-name {
+      font-weight: bold; }
