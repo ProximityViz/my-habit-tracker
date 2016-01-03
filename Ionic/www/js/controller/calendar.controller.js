@@ -1,4 +1,7 @@
 angular.module('app.controllers')
-.controller('CalendarCtrl', ['$ionicModal', function($ionicModal) {
+.controller('CalendarCtrl', ['TrackerFactory', function(TrackerFactory) {
 	console.log('CalendarCtrl');
+
+	// console.log(SettingsFactory.getWeekBegins());
+
 }]);
