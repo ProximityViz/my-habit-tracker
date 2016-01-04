@@ -26,7 +26,7 @@ angular.module('app', ['ionic', 'app.controllers'])
     controller: 'CalendarCtrl as calendar'
   })
   .state('date', {
-    url: '/date',
+    url: '/date/:dateId',
     templateUrl: 'templates/date.html',
     controller: 'DateCtrl as date'
   });

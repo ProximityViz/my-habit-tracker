@@ -5,7 +5,10 @@ angular.module('app')
                      function (SettingsFactory,   $filter) {
     console.log('TrackerFactory');
 
+    var palette = ["#00FF36", "#004CFF", "#6100AE", "#FF000B", "#FF9000", "#FFFC00"];
+
     var habit0 = {
+      id: 0,
       name: "Musicloon",
       color: "#262262",
       abbreviation: "ML",
@@ -16,6 +19,7 @@ angular.module('app')
     };
 
     var habit1 = {
+      id: 1,
       name: "Soundscapes",
       abbreviation: "SS",
       color: "#50A833",
@@ -73,7 +77,7 @@ angular.module('app')
         } else {
           formattedDate = formattedDate + "-" + day;
         }
-        var dayData = {cell: cellNumber, number: day};
+        var dayData = {cell: cellNumber, number: day, date: formattedDate};
         // search habitData for this day
         var dayHabits = [];
         for (var habit in habitData) {
@@ -91,9 +95,29 @@ angular.module('app')
       return grid;
     }
 
+    function getHabitsList() {
+      // maybe just return the names
+      return habitData;
+    }
+
+    function addHabit(habit) {
+      // if there's no color, add one
+      if (numberOfHabits < palette.length) {
+        habit.color = palette[numberOfHabits];
+      } else {
+        habit.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+      }
+      habit.id = numberOfHabits;
+      habitData.push(habit);
+      numberOfHabits = habitData.length;
+      habit = null;
+    }
+
     // Public API here
     return {
       getWeekdayList: getWeekdayList,
-      createCalendarGrid: createCalendarGrid
+      createCalendarGrid: createCalendarGrid,
+      getHabitsList: getHabitsList,
+      addHabit: addHabit
     };
   }]);
