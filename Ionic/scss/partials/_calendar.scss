@@ -10,6 +10,9 @@
       &.empty-date {
         border: none;
       }
+      &.today-date {
+        border: 2px solid #ff000b;
+      }
     }
     .weekday-labels {
       text-align: center;

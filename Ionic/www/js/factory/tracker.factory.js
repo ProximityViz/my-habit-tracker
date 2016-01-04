@@ -5,6 +5,8 @@ angular.module('app')
                      function (SettingsFactory,   $filter) {
     console.log('TrackerFactory');
 
+    var today = moment().format("YYYY-MM-DD");
+
     var palette = ["#00FF36", "#004CFF", "#6100AE", "#FF000B", "#FF9000", "#FFFC00"];
 
     var habit0 = {
@@ -78,6 +80,7 @@ angular.module('app')
           formattedDate = formattedDate + "-" + day;
         }
         var dayData = {cell: cellNumber, number: day, date: formattedDate};
+        if (formattedDate === today) { dayData.today = true; };
         // search habitData for this day
         var dayHabits = [];
         for (var habit in habitData) {

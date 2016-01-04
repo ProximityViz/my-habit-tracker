@@ -9739,6 +9739,9 @@ a.button {
     .calendar-view .calendar .weekday-labels.empty-date,
     .calendar-view .calendar .date.empty-date {
       border: none; }
+    .calendar-view .calendar .weekday-labels.today-date,
+    .calendar-view .calendar .date.today-date {
+      border: 2px solid #ff000b; }
   .calendar-view .calendar .weekday-labels {
     text-align: center; }
   .calendar-view .calendar .date {
