@@ -1,9 +1,11 @@
-<ion-view view-title="Calendar" class="calendar-view">
-  <ion-content class="padding">
-  	<button ng-click="calendar.prevMonth()">Prev</button>
-    {{calendar.monthFormatted}}
-    <button ng-click="calendar.nextMonth()">Next</button>
-    <div class="calendar">
+<ion-view view-title="Calendar" class="calendar-view" hide-nav-bar="true">
+  <ion-content>
+    <div class="month">
+    	<button class="button" ng-click="calendar.prevMonth()"><i class="icon ion-arrow-left-a"></i></button>
+      <div class="month-name">{{calendar.monthFormatted}}</div>
+      <button class="button" ng-click="calendar.nextMonth()"><i class="icon ion-arrow-right-a"></i></button>
+    </div>
+    <div class="calendar padding">
     	<div class="weekday-labels" ng-repeat="weekday in calendar.weekdays">
     		<div>{{weekday}}</div>
     	</div>

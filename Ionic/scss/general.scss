@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Petita';
+  src: url('../resources/PetitaMedium.ttf') format('truetype');
+}
+
+ion-content {
+	background-color: #000B24;
+  color: #fff;
+  font-family: 'Petita';
+}

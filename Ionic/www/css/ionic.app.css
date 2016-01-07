@@ -9728,6 +9728,31 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: 'Petita';
+  src: url("../resources/PetitaMedium.ttf") format("truetype"); }
+
+ion-content {
+  background-color: #000B24;
+  color: #fff;
+  font-family: 'Petita'; }
+
+.calendar-view .month {
+  text-align: center;
+  border-bottom: 1px solid #00257E;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .calendar-view .month .month-name {
+    margin-top: 2vw;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 7vw;
+    width: calc(100% - 20px - 52px - 52px);
+    height: calc(47px - 2vw); }
+  .calendar-view .month button {
+    background-color: #00257E;
+    color: #004CFF; }
+
 .calendar-view .calendar {
   width: 100%; }
   .calendar-view .calendar .weekday-labels,
@@ -9735,13 +9760,14 @@ a.button {
     display: inline-block;
     width: calc(100% / 7);
     position: relative;
-    border: 1px solid #ccc; }
+    border: 1px solid #00257E;
+    font-family: 'Petita'; }
     .calendar-view .calendar .weekday-labels.empty-date,
     .calendar-view .calendar .date.empty-date {
       border: none; }
     .calendar-view .calendar .weekday-labels.today-date,
     .calendar-view .calendar .date.today-date {
-      border: 2px dashed #ff000b; }
+      border: 2px dashed #004CFF; }
   .calendar-view .calendar .weekday-labels {
     text-align: center;
     font-size: 2vw; }
