@@ -7,7 +7,7 @@
     	<div class="weekday-labels" ng-repeat="weekday in calendar.weekdays">
     		<div>{{weekday}}</div>
     	</div>
-    	<div class="date" ng-repeat="date in calendar.days" ng-class="!date.number ? 'empty-date' : ''; date.today ? 'today-date' : '';" ui-sref="date({dateId: date.date})">
+    	<div class="date" ng-repeat="date in calendar.days" ng-class="{'empty-date': !date.number, 'today-date': date.today}" ui-sref="date({dateId: date.date})">
     		<div class="date-number">{{date.number}}</div>
     		<div class="habit-names"><span class="habit-name" ng-repeat="habit in date.habitData" ng-style="{'color': habit.color}">{{habit.abbreviation}}<br></span></div>
     	</div>
