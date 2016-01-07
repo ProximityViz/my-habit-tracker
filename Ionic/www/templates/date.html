@@ -5,7 +5,7 @@
   <ion-nav-buttons side="right">
     <button class="button button-positive" ng-click="date.showAddModal();"><i class="icon ion-plus"></i></button>
   </ion-nav-buttons>
-  <ion-content>
-    <button class="button button-full button-positive" ng-repeat="habit in date.habits track by habit.id" ng-style="{'background-color': habit.color}">{{habit.name}}</button>
+  <ion-content class="padding">
+    <button class="button button-full button-positive" ng-repeat="habit in date.habits track by habit.id" ng-style="{'background-color': habit.color, 'color': habit.accent}">{{habit.name}}</button>
   </ion-content>
 </ion-view>

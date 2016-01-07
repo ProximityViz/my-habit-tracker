@@ -7,12 +7,65 @@ angular.module('app')
 
     var today = moment().format("YYYY-MM-DD");
 
-    var palette = ["#00FF36", "#004CFF", "#6100AE", "#FF000B", "#FF9000", "#FFFC00"];
+    var palette = [
+      {
+        color: "#00FF36",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#004CFF",
+        used: false,
+        accent: "#fff"
+      },{
+        color: "#6100AE",
+        used: false,
+        accent: "#fff"
+      },{
+        color: "#FF000B",
+        used: false,
+        accent: "#fff"
+      },{
+        color: "#FF9000",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#FFFC00",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#00FFF3",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#0041DB",
+        used: false,
+        accent: "#fff"
+      },{
+        color: "#FF00C0",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#DB3C00",
+        used: false,
+        accent: "#fff"
+      },{
+        color: "#FFC700",
+        used: false,
+        accent: "#000"
+      },{
+        color: "#69FF00",
+        used: false,
+        accent: "#000"
+      }
+    ];
+    // mark which palettes have been used; auto-select the first one that hasn't been used yet
+    // maybe also change display order
 
     var habit0 = {
       id: 0,
       name: "Musicloon",
       color: "#262262",
+      accent: "#fff",
       abbreviation: "ML",
       dates: [
         "2016-01-17",
@@ -25,6 +78,7 @@ angular.module('app')
       name: "Soundscapes",
       abbreviation: "SS",
       color: "#50A833",
+      accent: "#fff",
       dates: [
         "2016-01-18",
         "2016-01-20"
@@ -104,16 +158,22 @@ angular.module('app')
     }
 
     function addHabit(habit) {
-      // if there's no color, add one
-      if (numberOfHabits < palette.length) {
-        habit.color = palette[numberOfHabits];
-      } else {
-        habit.color = '#' + Math.floor(Math.random()*16777215).toString(16);
-      }
       habit.id = numberOfHabits;
       habitData.push(habit);
       numberOfHabits = habitData.length;
       habit = null;
+      // add to ngStorage
+    }
+
+    function getPalette() {
+      // get from ngStorage
+      // if there's nothing there, grab it from palette
+      return palette;
+    }
+
+    function markColorUsed(index) {
+      palette[index].used = true;
+      // add to ngStorage
     }
 
     // Public API here
@@ -121,6 +181,8 @@ angular.module('app')
       getWeekdayList: getWeekdayList,
       createCalendarGrid: createCalendarGrid,
       getHabitsList: getHabitsList,
-      addHabit: addHabit
+      addHabit: addHabit,
+      getPalette: getPalette,
+      markColorUsed: markColorUsed
     };
   }]);

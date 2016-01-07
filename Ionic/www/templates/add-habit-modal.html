@@ -1,25 +1,26 @@
-<ion-modal-view class="photo-modal">
+<ion-modal-view class="add-habit-modal">
   <ion-header-bar class="bar bar-header bar-positive" ng-click="addModal.hide()">
     <h1 class="title">Add Habit</h1>
     <button class="button button-clear button-primary" ng-click="showAddModal.hide()">Close</button>
   </ion-header-bar>
   <ion-content class="padding" scroll="false">
     <div class="list">
-      <label class="item item-input item-stacked-label">
+      <label class="item item-input">
         <span class="input-label">Name</span>
         <input type="text" placeholder="Work Out" ng-model="habit.name">
       </label>
-      <label class="item item-input item-stacked-label">
+      <label class="item item-input">
         <span class="input-label">Abbreviation</span>
         <input type="text" placeholder="WO" ng-model="habit.abbreviation">
         <!-- automate -->
       </label>
-      <label class="item item-input item-stacked-label">
+      <div class="item item-input item-text-wrap">
         <span class="input-label">Color</span>
-        <input type="text" placeholder="Color" ng-model="habit.color"> 
-        <!-- color picker -->
-      </label>
-      <button class="button button-full button-positive" ng-click="addHabit(habit); habit = null;">Add</button>
+        <span class="color-options">
+          <span ng-repeat="option in date.colorOptions" class="color-option" ng-style="{'background-color': option.color}" ng-click="date.selectColor(option, $index)" ng-class="{selected : $index === date.selectedColorIndex}"></span>
+        </span>
+      </div>
+      <button class="button button-full button-positive" ng-click="date.addHabit(habit); habit = null;" type="submit">Add</button>
     </div>
   </ion-content>
 </ion-modal-view>
